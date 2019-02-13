@@ -1,4 +1,4 @@
 package home.learn.hmt.domain;
 
-public class MyClass {
+public class Constants {
 }

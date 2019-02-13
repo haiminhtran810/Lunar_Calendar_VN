@@ -8,13 +8,14 @@ import android.view.ViewGroup
 import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import home.learn.hmt.lunar_app.ui.screen.information.InformationFragment
+import home.learn.hmt.lunar_app.ui.screen.main.MainFragment
 
 class SplashFragment : BaseFragment() {
 
     private val handler = Handler()
 
     private val task = Runnable {
-        replaceFragment(InformationFragment.newInstance(), InformationFragment.TAG)
+        replaceFragment(MainFragment.newInstance(), MainFragment.TAG)
     }
 
     override fun onCreateView(

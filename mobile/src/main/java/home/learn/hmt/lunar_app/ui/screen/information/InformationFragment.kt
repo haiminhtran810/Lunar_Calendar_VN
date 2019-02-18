@@ -87,8 +87,12 @@ class InformationFragment : BaseFragment() {
                 val hour = CHI[(time.hours / 2)]
                 val timeFormat = SimpleDateFormat(FORMAT_TIME_24)
                 val timeString = timeFormat.format(time.time)
-                tv_hour.text = timeString
-                tv_hour_can_chi.text = resources.getString(R.string.hour) + " " + hour
+                tv_hour?.apply {
+                    text = timeString
+                }
+                tv_hour_can_chi?.apply {
+                    text = resources.getString(R.string.hour) + " " + hour
+                }
                 handler?.postDelayed(this, 1000)
             }
         }

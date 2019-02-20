@@ -1,6 +1,6 @@
 package home.learn.hmt.lunar_app.utils
 
-import home.learn.hmt.lunar_app.model.Calendardate
+import home.learn.hmt.lunar_app.model.CalendarDate
 import home.learn.hmt.lunar_app.model.DayMonthYear
 import java.text.SimpleDateFormat
 import java.util.*
@@ -15,7 +15,7 @@ fun isToday(mYear: Int, mMonth: Int, mDate: Int): Boolean {
             mDate == today.get(Calendar.DAY_OF_MONTH)
 }
 
-fun isDateEqual(date1: Calendardate, date2: Calendardate): Boolean {
+fun isDateEqual(date1: CalendarDate, date2: CalendarDate): Boolean {
     return date2.mYear == date2.mYear &&
             date2.mMonth == date2.mMonth &&
             date2.mDay == date2.mDay
@@ -28,3 +28,4 @@ fun getDayOfWeek(dmy: DayMonthYear): String {
     val day = date.day
     return dayOfWeekToString(day)
 }
+

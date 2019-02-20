@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.viewpager.widget.ViewPager
 
-class CalendarViewPager
+class WrapCalendarViewPager
 @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : ViewPager(context, attrs) {
     private var mSwipeEnabled = true
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

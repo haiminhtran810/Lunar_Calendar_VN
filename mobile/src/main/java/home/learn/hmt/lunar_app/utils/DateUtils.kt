@@ -1,5 +1,8 @@
 package home.learn.hmt.lunar_app.utils
 
+import android.content.Context
+import android.graphics.Point
+import android.view.WindowManager
 import home.learn.hmt.lunar_app.model.CalendarDate
 import home.learn.hmt.lunar_app.model.DayMonthYear
 import java.text.SimpleDateFormat
@@ -27,5 +30,21 @@ fun getDayOfWeek(dmy: DayMonthYear): String {
     val date = simpleDateFormat.parse(dayFormat)
     val day = date.day
     return dayOfWeekToString(day)
+}
+
+private fun getPointSize(context: Context): Point {
+    val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+    val display = wm.defaultDisplay
+    val size = Point()
+    display.getSize(size)
+    return size
+}
+
+fun getScreenWidth(context: Context): Int {
+    return getPointSize(context).x
+}
+
+fun getScreenHeight(context: Context): Int {
+    return getPointSize(context).y
 }
 

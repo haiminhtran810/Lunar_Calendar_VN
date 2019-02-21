@@ -38,7 +38,7 @@
             android:src="@drawable/ic_menu"/>
 
 
-    <com.androidcalendar.views.WrapContentViewPager
+    <home.learn.hmt.lunar_app.widgets.WrapCalendarViewPager
             android:id="@+id/main_view_pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -3,10 +3,19 @@ package home.learn.hmt.lunar_app.model
 import java.util.*
 
 data class CalendarDate(
-    val mDay: Int,
-    val mMonth: Int,
-    val mYear: Int
+    var mDay: Int,
+    var mMonth: Int,
+    var mYear: Int
 ) {
+
+    fun setCalendar(calendar: Calendar) {
+        calendar?.apply {
+            mDay = get(Calendar.DAY_OF_WEEK)
+            mMonth = get(Calendar.MONTH)
+            mYear = get(Calendar.YEAR)
+        }
+    }
+
     fun getCalendar(): Calendar {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.HOUR_OF_DAY, 0)
@@ -18,4 +27,15 @@ data class CalendarDate(
     }
 
     fun getDayOfWeek() = getCalendar().get(Calendar.DAY_OF_WEEK)
+
+    fun isDateEqual(other: CalendarDate): Boolean {
+        return mYear == other.mYear &&
+                mMonth == other.mMonth &&
+                mDay == other.mDay
+    }
+
+
+    override fun toString(): String {
+        return "$mDay/$mMonth/$mYear"
+    }
 }

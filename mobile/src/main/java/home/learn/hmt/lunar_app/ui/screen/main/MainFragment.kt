@@ -7,6 +7,7 @@ import android.view.ViewGroup
 
 import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.ui.base.BaseFragment
+import home.learn.hmt.lunar_app.ui.screen.calendar.CalendarFragment
 import home.learn.hmt.lunar_app.ui.screen.information.InformationFragment
 
 class MainFragment : BaseFragment() {
@@ -19,7 +20,7 @@ class MainFragment : BaseFragment() {
 
     override fun initView() {
         super.initView()
-        replaceChildFragment(this, R.id.container_child, InformationFragment.newInstance(), InformationFragment.TAG)
+        replaceChildFragment(this, R.id.container_child, CalendarFragment.newInstance(), CalendarFragment.TAG)
     }
 
     companion object {

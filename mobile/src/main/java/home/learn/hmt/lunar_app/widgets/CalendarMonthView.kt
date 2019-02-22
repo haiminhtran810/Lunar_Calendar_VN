@@ -34,7 +34,7 @@ class CalendarMonthView @JvmOverloads constructor(
         view_calendar_month_grid.columnCount = col
         val screenWith = getScreenWidth(context)
         val width = screenWith / col
-        for (date in calendarMonth.mDays) {
+        for (date in calendarMonth.mDays!!) {
             val param = GridLayout.LayoutParams()
             param.width = width
             param.height = LayoutParams.WRAP_CONTENT

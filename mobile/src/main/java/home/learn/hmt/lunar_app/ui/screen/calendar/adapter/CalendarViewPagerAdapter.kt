@@ -13,15 +13,17 @@ import home.learn.hmt.lunar_app.widgets.listener.OnDateSelectedListener
 import home.learn.hmt.lunar_app.widgets.listener.OnDayViewClickListener
 import java.util.*
 
-class CalendarViewPagerAdapter @JvmOverloads constructor(val mViewPager: ViewPager, val mData: List<CalendarMonth>) :
+class CalendarViewPagerAdapter @JvmOverloads constructor(
+    val mViewPager: ViewPager,
+    val mData: MutableList<CalendarMonth>
+) :
     PagerAdapter(), OnDayViewClickListener {
     private var mSelectedDate: CalendarDate? = null
     private var mListener: OnDateSelectedListener? = null
 
     init {
         val mDate = Calendar.getInstance()
-        mSelectedDate =
-                CalendarDate(mDate.get(Calendar.DAY_OF_WEEK), mDate.get(Calendar.MONTH), mDate.get(Calendar.YEAR))
+        mSelectedDate = CalendarDate(mDate)
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
@@ -86,12 +88,12 @@ class CalendarViewPagerAdapter @JvmOverloads constructor(val mViewPager: ViewPag
     }
 
     fun addNext(month: CalendarMonth) {
-        mData.plus(month)
+        mData.add(month)
         notifyDataSetChanged()
     }
 
     fun addPrev(month: CalendarMonth) {
-
+        mData.add(0, month)
         notifyDataSetChanged()
     }
 
@@ -110,7 +112,6 @@ class CalendarViewPagerAdapter @JvmOverloads constructor(val mViewPager: ViewPag
             mSelectedDate?.apply {
                 mListener!!.onDateSelected(CalendarDate(mDay, mMonth, mYear))
             }
-
         }
     }
 }

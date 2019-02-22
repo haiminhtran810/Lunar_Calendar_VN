@@ -9,11 +9,12 @@ class WrapCalendarViewPager
 @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : ViewPager(context, attrs) {
     private var mSwipeEnabled = true
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        var height = 0
+       /* var height = 0
         for (i in 0 until childCount) {
             var child = getChildAt(i)
             child.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             var h = child.measuredHeight
+
             if (h > height) {
                 height = h
             }
@@ -21,8 +22,8 @@ class WrapCalendarViewPager
         var heightTemp = heightMeasureSpec
         if (height != 0) {
             heightTemp = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY)
-        }
-        super.onMeasure(widthMeasureSpec, heightTemp)
+        }*/
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
     fun setSwipeEnabled(swipeEnable: Boolean? = false) {

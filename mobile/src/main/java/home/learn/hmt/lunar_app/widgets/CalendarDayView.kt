@@ -16,6 +16,7 @@ class CalendarDayView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     var mCalendarDate = calendarDate
+
     init {
         LayoutInflater.from(context).inflate(R.layout.view_calendar_day, this)
         calendarDate?.apply {
@@ -24,18 +25,18 @@ class CalendarDayView @JvmOverloads constructor(
     }
 
     fun setThisMothTextColor() {
-        tv_calendar_day_text.setTextColor(ContextCompat.getColor(context, R.color.blu_main))
+        tv_calendar_day_text.setTextColor(ContextCompat.getColor(context, R.color.lightNavy))
     }
 
     fun setOtherMothTextColor() {
-        tv_calendar_day_text.setTextColor(ContextCompat.getColor(context, R.color.greyishBrown))
+        tv_calendar_day_text.setTextColor(ContextCompat.getColor(context, R.color.warmGreyTwo))
     }
 
     fun setPurpleSolidOvalBackground() {
-        bg_day.setBackgroundResource(R.drawable.oval_purple_solid)
+        //bg_day.setBackgroundResource(R.drawable.oval_purple_solid)
     }
 
     fun unsetPurpleSolidOvalBackground() {
-        bg_day.setBackgroundResource(R.drawable.oval_black_solid)
+        //bg_day.setBackgroundResource(R.drawable.oval_black_solid)
     }
 }

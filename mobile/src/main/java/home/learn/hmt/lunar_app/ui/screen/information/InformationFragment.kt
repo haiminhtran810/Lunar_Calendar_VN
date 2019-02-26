@@ -83,7 +83,8 @@ class InformationFragment : BaseFragment() {
             }
         }
         tv_hour_gold.text = hourGold
-        tv_month.text = resources.getString(R.string.month) + " " + lunaDay.month.toString()
+        tv_month.text = resources.getString(R.string.month) + " " + lunaDay.month.toString() + "\n - " + lunaDay.year +
+                " - "
         tv_header_month.text = resources.getString(
             R.string.month
         ) + " " + dmy.month.toString() + " - " + dmy.year.toString()

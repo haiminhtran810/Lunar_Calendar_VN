@@ -48,51 +48,12 @@
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/txt_author">
 
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/hour"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_10"
-                    tools:text="@string/hour"/>
-
-            <TextView
-                    android:id="@+id/tv_month"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    tools:text="Thang 1"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_26"/>
-
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:lines="2"
-                    android:text="@string/detail"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_10"
-                    tools:text="Ty, dan mau"/>
-        </LinearLayout>
-
-        <LinearLayout
-                android:id="@+id/lg_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/lg_title">
-
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
                 <TextView
                         android:id="@+id/tv_hour_can_chi"
                         android:layout_width="match_parent"
@@ -124,31 +85,36 @@
                         android:textSize="@dimen/sp_10"
                         tools:text="Ty, dan mau"/>
             </LinearLayout>
-            <View
-                    android:layout_width="@dimen/dp_1"
-                    android:layout_height="match_parent"
-                    android:background="@color/black_overlay"/>
-
-            <TextView
-                    android:id="@+id/tv_date_lunar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="21"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/sp_48"/>
-            <View
-                    android:layout_width="@dimen/dp_1"
-                    android:layout_height="match_parent"
-                    android:background="@color/black_overlay"/>
             <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:id="@+id/tv_date_lunar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="21"
+                        android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/sp_48"/>
+                <TextView
+                        android:id="@+id/tv_month"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:text="Thang 1"
+                        android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/sp_10"/>
+            </LinearLayout>
+            <LinearLayout
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical">
-
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
                 <TextView
                         android:id="@+id/tv_can_chi_date"
                         android:layout_width="match_parent"

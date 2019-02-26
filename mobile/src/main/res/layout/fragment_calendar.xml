@@ -6,6 +6,9 @@
               android:orientation="vertical"
               android:background="@android:color/white"
               tools:context=".ui.screen.calendar.CalendarFragment">
+    <include
+            android:id="@+id/layout_header"
+            layout="@layout/layout_header"/>
     <home.learn.hmt.lunar_app.widgets.calendarview.CalendarView
             android:id="@+id/cv_calendar"
             android:layout_width="match_parent"

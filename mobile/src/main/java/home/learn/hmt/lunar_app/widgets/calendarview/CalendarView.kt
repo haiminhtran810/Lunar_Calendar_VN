@@ -67,7 +67,6 @@ class CalendarView : LinearLayout {
     fun updateCalendar() {
         try {
             var cells = ArrayList<Date>()
-            var lunaCells = ArrayList<Date>()
             var calendar = currentDate.clone() as Calendar
             //var lunaCalendar = lunaDate.clone() as Calendar
 
@@ -82,10 +81,6 @@ class CalendarView : LinearLayout {
                 calendar.add(Calendar.DAY_OF_MONTH + 1, 1)
             }
 
-            /*while (lunaCells.size < DAYS_COUNT) {
-                lunaCells.add(calendar.time)
-                lunaCalendar.add(ChineseCalendar.DAY_OF_MONTH + 1, 1)
-            }*/
             calendar_date_display.text = formattder.format(currentDate.time)
             calendar_grid.adapter = CalendarAdapter(context, cells)
             val month = currentDate.get(Calendar.MONTH)

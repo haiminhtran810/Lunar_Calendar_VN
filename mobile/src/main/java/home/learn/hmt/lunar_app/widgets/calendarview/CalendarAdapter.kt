@@ -15,7 +15,7 @@ import java.util.*
 
 class CalendarAdapter : BaseAdapter {
     var context: Context? = null
-    private var list = ArrayList<Date>()
+    var list = ArrayList<Date>()
 
     constructor(context: Context, list: ArrayList<Date>) : super() {
         this.context = context

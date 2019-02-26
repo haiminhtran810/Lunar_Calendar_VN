@@ -12,9 +12,11 @@ import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.model.DayMonthYear
 import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import home.learn.hmt.lunar_app.ui.screen.information.adapter.FragmentDayAdapter
+import home.learn.hmt.lunar_app.ui.screen.main.MainFragment
 import home.learn.hmt.lunar_app.utils.*
 import kotlinx.android.synthetic.main.fragment_information.*
 import kotlinx.android.synthetic.main.layout_header.*
+import kotlinx.android.synthetic.main.layout_header.view.*
 import org.greenrobot.eventbus.EventBus
 import java.text.SimpleDateFormat
 import java.util.*
@@ -45,6 +47,15 @@ class InformationFragment : BaseFragment() {
             printInfo(dmyChanger!!)
         }
         setTime()
+    }
+
+    override fun handlers() {
+        super.handlers()
+        layout_header?.apply {
+            img_navigation.setOnClickListener {
+                (parentFragment as MainFragment).openDrawer(true)
+            }
+        }
     }
 
     fun printInfo(dmy: DayMonthYear) {

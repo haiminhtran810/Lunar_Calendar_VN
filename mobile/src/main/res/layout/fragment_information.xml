@@ -56,13 +56,14 @@
                     android:text="@string/hour"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/sp_10"
-                    tools:text="10:18"/>
+                    tools:text="@string/hour"/>
 
             <TextView
                     android:id="@+id/tv_month"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    tools:text="Thang 1"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/sp_26"/>
@@ -123,7 +124,10 @@
                         android:textSize="@dimen/sp_10"
                         tools:text="Ty, dan mau"/>
             </LinearLayout>
-
+            <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_overlay"/>
 
             <TextView
                     android:id="@+id/tv_date_lunar"
@@ -134,7 +138,10 @@
                     android:text="21"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/sp_48"/>
-
+            <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_overlay"/>
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -169,7 +176,6 @@
                         android:text="Ngày Quý Hợi"
                         android:textColor="@android:color/black"/>
             </LinearLayout>
-
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

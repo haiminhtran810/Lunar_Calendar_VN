@@ -12,6 +12,7 @@ import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import home.learn.hmt.lunar_app.ui.screen.main.MainFragment
 import home.learn.hmt.lunar_app.widgets.calendarview.CalendarView
 import kotlinx.android.synthetic.main.fragment_calendar.*
+import kotlinx.android.synthetic.main.layout_can_chi_information.view.*
 import kotlinx.android.synthetic.main.layout_header.view.*
 import java.util.*
 
@@ -26,6 +27,11 @@ class CalendarFragment : BaseFragment() {
 
     override fun initView() {
         super.initView()
+
+    }
+
+    override fun handlers() {
+        super.handlers()
         layout_header.apply {
             img_navigation.setImageResource(R.drawable.ic_arrow_back_black_24dp)
             lg_header_month.apply {
@@ -33,13 +39,14 @@ class CalendarFragment : BaseFragment() {
                 img_arrow.visibility = View.GONE
             }
             img_navigation.setOnClickListener {
-                //(parentFragment as MainFragment).openDrawer(true)
                 onBackPressed()
             }
         }
         cv_calendar.setEventHandler(object : CalendarView.EventHandler {
             override fun onDayPress(date: Date) {
-                Toast.makeText(requireActivity(), date.day.toString(), Toast.LENGTH_SHORT).show()
+                layout_can_chi_information?.apply {
+                    tv_Calendar.text = date.date.toString() + " - " + date.month.toString() + " - " + date.year
+                }
             }
         })
     }

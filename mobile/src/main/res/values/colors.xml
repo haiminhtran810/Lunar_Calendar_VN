@@ -3,7 +3,7 @@
     <color name="colorPrimary">@android:color/transparent</color>
     <color name="colorPrimaryDark">#01579B</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite"></color>
+    <color name="colorWhite">#ffff</color>
     <color name="vermillion">#F31918</color>
     <color name="vermillionTwo">#E6280F</color>
     <color name="vermillionTwo20">#33e6280f</color>
@@ -39,5 +39,5 @@
     <color name="aliceBlue">#F1F4F5</color>
     <color name="pattensBlue">#DCE1E6</color>
     <color name="red">#D50000</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="black_overlay">#000000</color>
 </resources>

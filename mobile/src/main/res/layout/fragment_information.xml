@@ -22,12 +22,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:background="@color/blu_main"/>
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_48"
-                android:alpha="0.5"
-                android:background="@android:color/white"
-                tools:ignore="MissingConstraints"/>
 
         <include
                 android:id="@+id/layout_header"
@@ -36,113 +30,109 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+            android:id="@+id/lg_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/pinkishGrey">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_author">
 
         <LinearLayout
-                android:id="@+id/lg_title"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/txt_author">
-
-            <LinearLayout
+                android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/tv_hour_can_chi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_10"
+                    tools:text="10:18"/>
+
+            <TextView
+                    android:id="@+id/tv_hour"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <TextView
-                        android:id="@+id/tv_hour_can_chi"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_10"
-                        tools:text="10:18"/>
-
-                <TextView
-                        android:id="@+id/tv_hour"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_26"
-                        tools:text="10:18"/>
-
-                <TextView
-                        android:id="@+id/tv_hour_gold"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:lines="2"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_10"
-                        tools:text="Ty, dan mau"/>
-            </LinearLayout>
-            <LinearLayout
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_26"
+                    tools:text="10:18"/>
+
+            <TextView
+                    android:id="@+id/tv_hour_gold"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <TextView
-                        android:id="@+id/tv_date_lunar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="21"
-                        android:gravity="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_48"/>
-                <TextView
-                        android:id="@+id/tv_month"
-                        android:layout_weight="2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        tools:text="Thang 1"
-                        android:gravity="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_10"/>
-            </LinearLayout>
-            <LinearLayout
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <TextView
-                        android:id="@+id/tv_can_chi_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Ngày Quý Hợi"
-                        android:textColor="@android:color/black"/>
-
-                <TextView
-                        android:id="@+id/tv_can_chi_month"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Ngày Quý Hợi"
-                        android:textColor="@android:color/black"/>
-
-                <TextView
-                        android:id="@+id/tv_can_chi_year"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Ngày Quý Hợi"
-                        android:textColor="@android:color/black"/>
-            </LinearLayout>
-
+                    android:lines="2"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_10"
+                    tools:text="Ty, dan mau"/>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/tv_date_lunar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="21"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/sp_48"/>
+            <TextView
+                    android:id="@+id/tv_month"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:text="Thang 1"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_10"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/tv_can_chi_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Ngày Quý Hợi"
+                    android:textColor="@android:color/black"/>
+
+            <TextView
+                    android:id="@+id/tv_can_chi_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Ngày Quý Hợi"
+                    android:textColor="@android:color/black"/>
+
+            <TextView
+                    android:id="@+id/tv_can_chi_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Ngày Quý Hợi"
+                    android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

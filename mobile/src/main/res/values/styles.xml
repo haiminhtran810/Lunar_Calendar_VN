@@ -28,4 +28,15 @@
         <attr name="dateFormat" format="string"/>
     </declare-styleable>
 
+    <style name="HorizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="VerticalLine">
+        <item name="android:layout_width">@dimen/dp_1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/black_overlay</item>
+    </style>
 </resources>

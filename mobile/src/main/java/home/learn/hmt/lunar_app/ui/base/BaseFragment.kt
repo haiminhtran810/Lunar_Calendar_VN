@@ -1,9 +1,11 @@
 package home.learn.hmt.lunar_app.ui.base
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
 import home.learn.hmt.lunar_app.R
 
@@ -73,6 +75,14 @@ abstract class BaseFragment : Fragment() {
         commitTransaction(transaction, addToBackStack, transit)
     }
 
+    fun popFragment(activity: Activity) {
+        (activity as FragmentActivity).supportFragmentManager.popBackStack()
+    }
+
+    fun popChildFragment(parentFragment: Fragment = this) {
+        parentFragment.childFragmentManager.popBackStack()
+    }
+
     @SuppressLint("WrongConstant")
     private fun commitTransaction(
         transaction: FragmentTransaction, addToBackStack: Boolean = false,
@@ -82,4 +92,6 @@ abstract class BaseFragment : Fragment() {
         if (transit != -1) transaction.setTransition(transit)
         transaction.commit()
     }
+
+    open fun onBackPressed() {}
 }

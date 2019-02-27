@@ -13,7 +13,6 @@
             android:textSize="@dimen/sp_15"
             android:textStyle="bold"
             android:text="12"
-            android:textColor="@android:color/black"
             android:id="@+id/tv_calendar_day_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

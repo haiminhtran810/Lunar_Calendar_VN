@@ -65,7 +65,7 @@ class DayFragment : BaseFragment() {
         lg_fox.apply {
             txt_fox?.text = folks[Random().nextInt(folks.size)]
         }
-        //img_bg_calendar.setImageResource(IMAGE_FOX[Random().nextInt(IMAGE_FOX.size)])
+        img_bg_calendar.setImageResource(IMAGE_FOX[Random().nextInt(IMAGE_FOX.size)])
     }
 
     companion object {

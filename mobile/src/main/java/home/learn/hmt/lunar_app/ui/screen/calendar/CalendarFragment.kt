@@ -17,7 +17,6 @@ import java.util.*
 
 class CalendarFragment : BaseFragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,20 +27,27 @@ class CalendarFragment : BaseFragment() {
     override fun initView() {
         super.initView()
         layout_header.apply {
+            img_navigation.setImageResource(R.drawable.ic_arrow_back_black_24dp)
             lg_header_month.apply {
                 tv_header_month.text = getString(R.string.nav_calendar)
                 img_arrow.visibility = View.GONE
             }
             img_navigation.setOnClickListener {
-                (parentFragment as MainFragment).openDrawer(true)
+                //(parentFragment as MainFragment).openDrawer(true)
+                onBackPressed()
             }
         }
         cv_calendar.setEventHandler(object : CalendarView.EventHandler {
             override fun onDayPress(date: Date) {
                 Toast.makeText(requireActivity(), date.day.toString(), Toast.LENGTH_SHORT).show()
             }
-
         })
+    }
+
+    override fun onBackPressed() {
+        parentFragment?.let {
+            popChildFragment(it)
+        }
     }
 
     companion object {

@@ -16,18 +16,20 @@
     <string name="six">Sáu</string>
     <string name="sat">Bảy</string>
 
-    <string name="january">January</string>
-    <string name="february">February</string>
-    <string name="march">March</string>
-    <string name="april">April</string>
-    <string name="may">May</string>
-    <string name="june">June</string>
-    <string name="july">July</string>
-    <string name="august">August</string>
-    <string name="september">September</string>
-    <string name="october">October</string>
-    <string name="november">November</string>
-    <string name="december">December</string>
+    <string-array name="month">
+        <item>Tháng 1</item>
+        <item>Tháng 2</item>
+        <item>Tháng 3</item>
+        <item>Tháng 4</item>
+        <item>Tháng 5</item>
+        <item>Tháng 6</item>
+        <item>Tháng 7</item>
+        <item>Tháng 8</item>
+        <item>Tháng 9</item>
+        <item>Tháng 10</item>
+        <item>Tháng 11</item>
+        <item>Tháng 12</item>
+    </string-array>
 
     <string name="date">Ngày</string>
     <string name="month">Tháng</string>
@@ -41,6 +43,11 @@
     <string name="nav_share">Chia sẻ</string>
     <string name="nav_calendar">Lịch</string>
     <string name="colection">Sưu tầm</string>
+
+    //
+    <string name="title_calendar">Dương Lịch</string>
+    <string name="title_luna">Âm Lịch</string>
+    <string name="title_start">Xuất hành</string>
 
     <string-array name="days_sunday_array">
         <item>Sun</item>

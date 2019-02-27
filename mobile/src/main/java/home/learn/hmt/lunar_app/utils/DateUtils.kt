@@ -40,11 +40,22 @@ private fun getPointSize(context: Context): Point {
     return size
 }
 
-fun getScreenWidth(context: Context): Int {
-    return getPointSize(context).x
+fun convertHourToChi(hour: Int): String {
+    return when (hour) {
+        in 1.until(3) -> CHI[1]
+        in 3.until(5) -> CHI[2]
+        in 5.until(7) -> CHI[3]
+        in 7.until(9) -> CHI[4]
+        in 9.until(11) -> CHI[5]
+        in 11.until(13) -> CHI[6]
+        in 13.until(15) -> CHI[7]
+        in 15.until(17) -> CHI[8]
+        in 17.until(19) -> CHI[9]
+        in 19.until(21) -> CHI[10]
+        in 21.until(23) -> CHI[11]
+        else -> CHI[0]
+    }
 }
 
-fun getScreenHeight(context: Context): Int {
-    return getPointSize(context).y
-}
+
 

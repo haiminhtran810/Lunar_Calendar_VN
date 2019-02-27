@@ -96,7 +96,7 @@ class InformationFragment : BaseFragment() {
         val time = object : Runnable {
             override fun run() {
                 val time = Date(System.currentTimeMillis())
-                val hour = CHI[(time.hours / 2)]
+                val hour = convertHourToChi(time.hours)
                 val timeFormat = SimpleDateFormat(FORMAT_TIME_24)
                 val timeString = timeFormat.format(time.time)
                 tv_hour?.apply {
@@ -160,6 +160,11 @@ class InformationFragment : BaseFragment() {
                 })
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        activity?.onBackPressed()
     }
 
     companion object {

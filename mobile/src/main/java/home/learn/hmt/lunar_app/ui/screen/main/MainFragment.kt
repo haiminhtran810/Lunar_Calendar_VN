@@ -38,8 +38,8 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
         replaceChildFragment(
             this,
             R.id.container_child,
-            CalendarFragment.newInstance(),
-            CalendarFragment.TAG,
+            InformationFragment.newInstance(),
+            InformationFragment.TAG,
             true
         )
     }

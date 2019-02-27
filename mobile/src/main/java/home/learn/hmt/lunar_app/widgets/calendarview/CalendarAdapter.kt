@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import home.learn.hmt.lunar_app.R
 import kotlinx.android.synthetic.main.view_calendar_day.view.*
 import java.util.*
@@ -34,13 +35,12 @@ class CalendarAdapter : BaseAdapter {
         var calendarLayout = inflator.inflate(R.layout.view_calendar_day, parent, false)
 
         calendarLayout.tv_calendar_day_text.setTypeface(null, Typeface.NORMAL)
-        calendarLayout.tv_calendar_day_text.setTextColor(context!!.resources.getColor(R.color.black_overlay))
-
+        calendarLayout.tv_calendar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.black_overlay))
         if (month != today.month || year != today.year) {
-            calendarLayout.tv_calendar_day_text.setTextColor(context!!.resources.getColor(R.color.warmGreyTwo))
+            calendarLayout.tv_calendar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.warmGreyTwo))
         } else if (day == today.date) {
             calendarLayout.tv_calendar_day_text.setTypeface(null, Typeface.BOLD)
-            calendarLayout.tv_calendar_day_text.setTextColor(context!!.resources.getColor(R.color.blu_main))
+            calendarLayout.tv_calendar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.blu_main))
         }
 
         calendarLayout.tv_calendar_day_text.text = dateLuna.time.date.toString()

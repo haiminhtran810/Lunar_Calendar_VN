@@ -24,9 +24,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
     </LinearLayout>
+    <TextView
+            android:textColor="@color/black_overlay"
+            android:id="@+id/tv_Calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40"/>
 
@@ -49,6 +53,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
     </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:background="@color/transparent"
             android:layout_width="match_parent"

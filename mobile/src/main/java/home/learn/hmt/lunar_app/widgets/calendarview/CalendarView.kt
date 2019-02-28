@@ -101,9 +101,11 @@ class CalendarView : LinearLayout {
             updateCalendar()
         }
 
-        calendar_grid.onItemClickListener = AdapterView.OnItemClickListener { p0, p1, p2, p3 ->
-            if (eventHandler == null) return@OnItemClickListener
-            eventHandler?.onDayPress(p0?.getItemAtPosition(p2) as Date)
+        calendar_grid.onItemClickListener = AdapterView.OnItemClickListener { parent, v, position, id ->
+            val dateContent = parent?.getItemAtPosition(position) as Date
+            eventHandler?.apply {
+                onDayPress(dateContent)
+            }
         }
 
         calendar_grid.setOnTouchListener(object : OnSwipeTouchListener(context) {

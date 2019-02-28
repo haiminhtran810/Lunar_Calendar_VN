@@ -24,6 +24,7 @@
                 android:layout_height="match_parent">
 
             <include
+                    android:id="@+id/layout_can_chi_information"
                     layout="@layout/layout_can_chi_information"/>
         </LinearLayout>
     </ScrollView>

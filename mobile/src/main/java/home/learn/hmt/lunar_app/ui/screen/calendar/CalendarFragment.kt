@@ -12,6 +12,7 @@ import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import home.learn.hmt.lunar_app.ui.screen.main.MainFragment
 import home.learn.hmt.lunar_app.widgets.calendarview.CalendarView
 import kotlinx.android.synthetic.main.fragment_calendar.*
+import kotlinx.android.synthetic.main.layout_can_chi_information.*
 import kotlinx.android.synthetic.main.layout_can_chi_information.view.*
 import kotlinx.android.synthetic.main.layout_header.view.*
 import java.util.*
@@ -27,7 +28,7 @@ class CalendarFragment : BaseFragment() {
 
     override fun initView() {
         super.initView()
-
+        tv_Calendar.text = Calendar.getInstance().convertToString()
     }
 
     override fun handlers() {
@@ -43,9 +44,9 @@ class CalendarFragment : BaseFragment() {
             }
         }
         cv_calendar.setEventHandler(object : CalendarView.EventHandler {
-            override fun onDayPress(date: Date) {
+            override fun onDayPress(cal: Calendar) {
                 layout_can_chi_information?.apply {
-                    tv_Calendar.text = date.date.toString() + " - " + date.month.toString() + " - " + date.year
+                    tv_Calendar.text = cal.convertToString()
                 }
             }
         })
@@ -60,5 +61,16 @@ class CalendarFragment : BaseFragment() {
     companion object {
         const val TAG = "CalendarFragment"
         fun newInstance() = CalendarFragment()
+    }
+
+    fun Calendar.convertToString(): String {
+        var dayOfWeek = if (this.get(Calendar.DAY_OF_WEEK) == 1) {
+            getString(R.string.sunday)
+        } else {
+            getString(R.string.day) + " " + this.get(Calendar.DAY_OF_WEEK)
+        }
+        return dayOfWeek + " - " + getString(R.string.date) + " " + this.get(Calendar.DATE) + " - " +
+                getString(R.string.month) + " " + (this.get(Calendar.MONTH) + 1) + " -" +
+                getString(R.string.year) + " " + this.get(Calendar.YEAR)
     }
 }

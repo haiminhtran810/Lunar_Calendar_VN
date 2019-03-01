@@ -31,6 +31,7 @@
         <item>Tháng 12</item>
     </string-array>
 
+    <string name="day">Thứ</string>
     <string name="date">Ngày</string>
     <string name="month">Tháng</string>
     <string name="year">Năm</string>

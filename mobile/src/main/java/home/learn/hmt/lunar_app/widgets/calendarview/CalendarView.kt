@@ -9,6 +9,7 @@ import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.utils.DATE_FORMAT
 import home.learn.hmt.lunar_app.utils.DAYS_COUNT
 import home.learn.hmt.lunar_app.utils.YYYY
+import home.learn.hmt.lunar_app.utils.convertDataToCalendar
 import kotlinx.android.synthetic.main.control_calendar.view.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -91,7 +92,7 @@ class CalendarView : LinearLayout {
 
 
     private fun assignClickHandlers() {
-        calendar_next_button.setOnClickListener {
+        /*calendar_next_button.setOnClickListener {
             currentDate.add(Calendar.MONTH, 1)
             updateCalendar()
         }
@@ -99,12 +100,12 @@ class CalendarView : LinearLayout {
         calendar_prev_button.setOnClickListener {
             currentDate.add(Calendar.MONTH, -1)
             updateCalendar()
-        }
+        }*/
 
-        calendar_grid.onItemClickListener = AdapterView.OnItemClickListener { parent, v, position, id ->
-            val dateContent = parent?.getItemAtPosition(position) as Date
+        calendar_grid.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, id ->
+            val dateContent = parent?.getItemAtPosition(id.toInt()) as Date
             eventHandler?.apply {
-                onDayPress(dateContent)
+                onDayPress(dateContent.convertDataToCalendar())
             }
         }
 
@@ -124,7 +125,7 @@ class CalendarView : LinearLayout {
     }
 
     interface EventHandler {
-        fun onDayPress(date: Date)
+        fun onDayPress(calendar: Calendar)
     }
 
     fun setEventHandler(eventHandler: EventHandler) {

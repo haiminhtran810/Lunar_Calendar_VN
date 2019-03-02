@@ -38,8 +38,8 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
         replaceChildFragment(
             this,
             R.id.container_child,
-            CalendarFragment.newInstance(),
-            CalendarFragment.TAG,
+            InformationFragment.newInstance(),
+            InformationFragment.TAG,
             true
         )
     }
@@ -47,7 +47,7 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when (p0.itemId) {
             R.id.menu_calendar -> {
-                replaceChildFragment(
+                addChildFragment(
                     this,
                     R.id.container_child,
                     CalendarFragment.newInstance(),

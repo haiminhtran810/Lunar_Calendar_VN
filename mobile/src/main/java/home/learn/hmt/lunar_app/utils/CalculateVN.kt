@@ -164,11 +164,8 @@ fun lunarYear(Y: Int): Array<DayMonthYear?> {
     val month11B = lunarMonth11(Y)
     val off = localToJD(month11B) - jdMonth11A
     val leap = off > 365.0
-    if (!leap) {
-        ret = arrayOfNulls<DayMonthYear>(size = 13)
-    } else {
-        ret = arrayOfNulls<DayMonthYear>(size = 14)
-    }
+    ret = if (!leap) arrayOfNulls<DayMonthYear>(size = 13)
+    else arrayOfNulls<DayMonthYear>(size = 14)
     ret[0] = month11A
     ret[ret.size - 1] = month11B
 

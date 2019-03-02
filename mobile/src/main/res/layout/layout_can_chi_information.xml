@@ -25,14 +25,14 @@
                 android:layout_weight="1"/>
     </LinearLayout>
     <TextView
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
             android:textColor="@color/black_overlay"
             android:id="@+id/tv_Calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_40"/>
 
     <View style="@style/HorizontalLine"/>
     <LinearLayout
@@ -54,7 +54,19 @@
                 android:layout_weight="1"/>
     </LinearLayout>
 
+    <TextView
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:textColor="@color/black_overlay"
+            android:id="@+id/tv_Luna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
             android:background="@color/transparent"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40"/>

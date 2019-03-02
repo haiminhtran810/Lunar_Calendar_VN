@@ -17,16 +17,6 @@
             android:paddingTop="@dimen/dp_8"
             android:paddingBottom="@dimen/dp_8">
 
-        <!-- prev button -->
-        <ImageView
-                android:visibility="gone"
-                android:id="@+id/calendar_prev_button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@android:drawable/ic_media_previous"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
 
         <!-- date title -->
         <TextView
@@ -41,16 +31,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"/>
 
-        <!-- next button -->
-        <ImageView
-                android:visibility="gone"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/calendar_next_button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@android:drawable/ic_media_next"
-                app:layout_constraintRight_toRightOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- days header -->
@@ -66,7 +47,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/cn"
                 android:textColor="@color/red"/>
 
@@ -74,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/t2"
                 android:textColor="@color/black_overlay"/>
 
@@ -82,7 +63,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/t3"
                 android:textColor="@color/black_overlay"/>
 
@@ -90,7 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/t4"
                 android:textColor="@color/black_overlay"/>
 
@@ -98,7 +79,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/t5"
                 android:textColor="@color/black_overlay"/>
 
@@ -106,7 +87,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/t6"
                 android:textColor="@color/black_overlay"/>
 
@@ -114,13 +95,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/t7"
                 android:textColor="@color/black_overlay"/>
     </LinearLayout>
 
     <!-- days view -->
     <GridView
+            android:verticalSpacing="@dimen/dp_1"
+            android:horizontalSpacing="@dimen/dp_1"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_5"
             android:id="@+id/calendar_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

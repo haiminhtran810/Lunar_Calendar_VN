@@ -57,5 +57,11 @@ fun convertHourToChi(hour: Int): String {
     }
 }
 
+fun Date.convertDataToCalendar(): Calendar {
+    val cal = Calendar.getInstance()
+    cal.time = this
+    return cal
+}
+
 
 

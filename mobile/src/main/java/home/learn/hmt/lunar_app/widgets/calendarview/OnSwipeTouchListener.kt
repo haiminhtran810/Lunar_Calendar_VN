@@ -27,16 +27,7 @@ open class OnSwipeTouchListener(context: Context) : View.OnTouchListener {
 
 
     private inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
-        override fun onDown(e: MotionEvent?): Boolean {
-            return true
-        }
-
-        override fun onSingleTapUp(e: MotionEvent?): Boolean {
-            return super.onSingleTapUp(e)
-        }
-
         override fun onFling(e1: MotionEvent?, e2: MotionEvent?, velocityX: Float, velocityY: Float): Boolean {
-            var result = false
             try {
                 val diffY = e2!!.y - e1!!.y
                 val diffX = e2.x - e1.x
@@ -48,7 +39,6 @@ open class OnSwipeTouchListener(context: Context) : View.OnTouchListener {
                             onSwipeLeft()
                         }
                     }
-                    result = true
                 }
             } catch (e: Exception) {
 

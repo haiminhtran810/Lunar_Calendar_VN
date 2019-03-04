@@ -8,8 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 
 import home.learn.hmt.lunar_app.R
+import home.learn.hmt.lunar_app.model.DayMonthYear
 import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import home.learn.hmt.lunar_app.ui.screen.main.MainFragment
+import home.learn.hmt.lunar_app.utils.CAN
+import home.learn.hmt.lunar_app.utils.CHI
+import home.learn.hmt.lunar_app.utils.can
+import home.learn.hmt.lunar_app.utils.chi
 import home.learn.hmt.lunar_app.widgets.calendarview.CalendarView
 import kotlinx.android.synthetic.main.fragment_calendar.*
 import kotlinx.android.synthetic.main.layout_can_chi_information.*
@@ -28,8 +33,20 @@ class CalendarFragment : BaseFragment() {
 
     override fun initView() {
         super.initView()
-        tv_Calendar.text = Calendar.getInstance().convertToString()
+        val cal = Calendar.getInstance()
+        tv_Calendar.text = cal.convertToString()
+
+        printInforCanChi(DayMonthYear(cal.get(Calendar.DATE), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.YEAR)))
     }
+
+    private fun printInforCanChi(dayMonthYear: DayMonthYear) {
+        val can = can(dayMonthYear)
+        val chi = chi(dayMonthYear)
+        tv_Luna_day.text = CAN[can[0]] + " " + CHI[chi[0]]
+        tv_Luna_month.text = CAN[can[1]] + " " + CHI[chi[1]]
+        tv_Luna_year.text = CAN[can[2]] + " " + CHI[chi[2]]
+    }
+
 
     override fun handlers() {
         super.handlers()
@@ -47,6 +64,13 @@ class CalendarFragment : BaseFragment() {
             override fun onDayPress(cal: Calendar) {
                 layout_can_chi_information?.apply {
                     tv_Calendar.text = cal.convertToString()
+                    printInforCanChi(
+                        DayMonthYear(
+                            cal.get(Calendar.DATE),
+                            cal.get(Calendar.MONTH) + 1,
+                            cal.get(Calendar.YEAR)
+                        )
+                    )
                 }
             }
         })

@@ -12,6 +12,8 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.model.DayMonthYear
+import home.learn.hmt.lunar_app.utils.gioHoangDao
+import home.learn.hmt.lunar_app.utils.ngayHoangDao
 import home.learn.hmt.lunar_app.utils.solar2Lunar
 import kotlinx.android.synthetic.main.view_calendar_day.view.*
 import java.util.*
@@ -27,25 +29,26 @@ class CalendarAdapter : BaseAdapter {
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val today = Date()
+        val today = Calendar.getInstance()
+
         val date = getItem(position)
         val dateCal = Calendar.getInstance()
         dateCal.time = date
         val dateLuna = ChineseCalendar(date)
         val day = dateCal.get(Calendar.DATE)
-        val month = date.month
-        val year = date.year
+        val month = dateCal.get(Calendar.MONTH) + 1
+        val year = dateCal.get(Calendar.YEAR)
         var inflator = context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var calendarLayout = inflator.inflate(R.layout.view_calendar_day, parent, false)
 
         calendarLayout?.apply {
             tv_calendar_day_text.setTypeface(null, Typeface.BOLD)
             tv_calendar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.black_overlay))
-            if (month != today.month || year != today.year) {
+            if (month != (today.get(Calendar.MONTH) + 1) || year != today.get(Calendar.YEAR)) {
                 tv_calendar_day_text.setTypeface(null, Typeface.NORMAL)
                 tv_calendar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.warmGreyTwo))
                 tv_lunar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.warmGreyTwo))
-            } else if (day == today.date) {
+            } else if (day == today.get(Calendar.DATE)) {
                 tv_calendar_day_text.setTypeface(null, Typeface.BOLD)
                 tv_calendar_day_text.setTextColor(ContextCompat.getColor(context!!, R.color.blu_main))
             }
@@ -57,6 +60,11 @@ class CalendarAdapter : BaseAdapter {
                 dmyLunar.day.toString() + "/" + dmyLunar.month.toString()
             } else {
                 dmyLunar.day.toString()
+            }
+            if (ngayHoangDao(dmyCalendar) == 0) {
+                bg_hour_gold.setBackgroundResource(R.drawable.oval_black_solid)
+            } else {
+                bg_hour_gold.setBackgroundResource(R.drawable.oval_purple_solid)
             }
         }
         return calendarLayout

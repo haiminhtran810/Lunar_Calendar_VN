@@ -32,8 +32,14 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
 
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun initView() {
         super.initView()
+
         nav_view.setNavigationItemSelectedListener(this)
         replaceChildFragment(
             this,
@@ -68,5 +74,11 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
                 arguments = Bundle().apply {
                 }
             }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.nav_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+
     }
 }

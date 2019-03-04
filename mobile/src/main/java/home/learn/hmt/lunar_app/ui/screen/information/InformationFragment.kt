@@ -61,9 +61,7 @@ class InformationFragment : BaseFragment() {
     fun printInfo(dmy: DayMonthYear) {
         val can = can(dmy)
         val chi = chi(dmy)
-        tv_can_chi_date.text = resources.getString(
-            R.string.date
-        ) + " " + CAN[can[0]] + " " + CHI[chi[0]]
+        tv_can_chi_date.text = resources.getString(R.string.date) + " " + CAN[can[0]] + " " + CHI[chi[0]]
         tv_can_chi_month.text = resources.getString(
             R.string.month
         ) + " " + CAN[can[1]] + " " + CHI[chi[1]]

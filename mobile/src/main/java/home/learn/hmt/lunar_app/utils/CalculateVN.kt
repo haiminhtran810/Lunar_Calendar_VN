@@ -293,7 +293,6 @@ fun thu(dmy: DayMonthYear): Int {
     return (localToJD(dmy) + 1.5).toInt() % 7
 }
 
-
 /* ket thuc can chi */
 
 fun maxDayOfMonth(m: Int, y: Int): Int {
@@ -407,7 +406,6 @@ fun truc(dmy: DayMonthYear): Int {
     return chi(dmy)[0]
 }
 
-
 fun daysBetween2Dates(
     dmy1: DayMonthYear?, dmy2: DayMonthYear?
 ): Long {
@@ -436,9 +434,7 @@ fun daysBetween2Dates(
 }
 
 fun nhiThapBatTu(dmy: DayMonthYear): Int {
-
     return daysBetween2Dates(DayMonthYear(1, 1, 1975), dmy).toInt() % 28
-
 }
 
 // result= 0: ngay hac dao
@@ -614,7 +610,6 @@ fun arrayBatTuong(counter: Int): Array<IntArray>? {
     return ret
 }
 
-// lấy ra ngày bất tương trong khoảng cho trước
 // lấy ra ngày bất tương trong khoảng cho trước
 fun ngayBatTuong(
     dmy1: DayMonthYear,

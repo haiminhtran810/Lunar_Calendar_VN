@@ -68,4 +68,8 @@
     <string name="t6">Sáu</string>
     <string name="t7">Bảy</string>
     <string name="cn">CN</string>
+    <string name="email">haiminhtran810@gmail.com</string>
+
+    <string name="facebook_app_id">691167354619085</string>
+    <string name="fb_login_protocol_scheme">24ac00c5770d489b92fb1a2670a81e73</string>
 </resources>

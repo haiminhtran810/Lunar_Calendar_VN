@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
-    <group android:checkableBehavior="single">
-        <item
-                android:id="@+id/menu_12_cung"
-                android:icon="@drawable/ic_yy"
-                android:title="@string/nav_12_cung"
-        />
-        <item
-                android:id="@+id/menu_flower_hand"
-                android:icon="@drawable/ic_yy"
-                android:title="@string/nav_married"
-        />
-        <item
-                android:id="@+id/menu_share"
-                android:icon="@drawable/ic_yy"
-                android:title="@string/nav_share"
-        />
+    <item
+            android:orderInCategory="1"
+            android:id="@+id/menu_12_cung"
+            android:icon="@drawable/ic_iconfinder_star"
+            android:title="@string/nav_12_cung"
+            app:showAsAction="never"
+    />
+    <!--<item
+            android:orderInCategory="2"
+            android:id="@+id/menu_flower_hand"
+            android:icon="@drawable/ic_yy"
+            android:title="@string/nav_married"
+            app:showAsAction="never"
+    />-->
+    <item
+            android:orderInCategory="3"
+            android:id="@+id/menu_share"
+            android:icon="@drawable/ic_share"
+            android:title="@string/nav_share"
+            app:showAsAction="never"
+    />
 
-        <item
-                android:id="@+id/menu_calendar"
-                android:icon="@drawable/ic_yy"
-                android:title="@string/nav_calendar"
-        />
-        <item
-                android:id="@+id/menu_setting"
-                android:icon="@drawable/ic_yy"
-                android:title="@string/nav_setting"
-        />
-    </group>
+    <item
+            android:orderInCategory="4"
+            android:id="@+id/menu_calendar"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/nav_calendar"
+            app:showAsAction="never"
+    />
+    <item
+            android:orderInCategory="5"
+            android:id="@+id/menu_setting"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/nav_setting"
+            app:showAsAction="never"
+    />
 </menu>

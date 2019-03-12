@@ -11,6 +11,8 @@ const val DATE_FORMAT = "MMM yyyy"
 const val FORMAT_TIME_24 = "HH:mm:ss"
 const val DD_MM_YYYY = "dd/MM/yyyy"
 const val YYYY = "yyyy"
+const val URL_12_STAR = "http://vansu.net/tu-vi.html"
+const val URL_SHARE_FACEBOOK = "https://www.facebook.com/nhoctax"
 
 val SUNLONG_MAJOR = arrayOf(
     19 * PI / 12,

@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.*
 import androidx.core.view.GravityCompat
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.navigation.NavigationView
 
 import home.learn.hmt.lunar_app.R
@@ -18,7 +19,6 @@ import home.learn.hmt.lunar_app.utils.URL_SHARE_FACEBOOK
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedListener {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +35,6 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
                 closeDrawer(GravityCompat.START)
             }
         }
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -46,7 +45,7 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
 
     override fun initView() {
         super.initView()
-
+        loadAds()
         nav_view.setNavigationItemSelectedListener(this)
         replaceChildFragment(
             this,
@@ -55,6 +54,13 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
             InformationFragment.TAG,
             true
         )
+    }
+
+    private fun loadAds() {
+        adView.apply {
+            val adRequest = AdRequest.Builder().build()
+            loadAd(adRequest)
+        }
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
@@ -93,7 +99,6 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
                 startActivity(Intent.createChooser(this, "share"))
             }
         }
-
     }
 
     companion object {

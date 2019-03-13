@@ -1,8 +1,6 @@
 package home.learn.hmt.lunar_app.ui.screen.main
 
-import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.*
 import androidx.core.view.GravityCompat

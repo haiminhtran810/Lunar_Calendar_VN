@@ -45,6 +45,7 @@
     <string name="nav_share">Chia sẻ</string>
     <string name="nav_calendar">Lịch</string>
     <string name="colection">Sưu tầm</string>
+    <string name="nav_about">Thông tin</string>
 
     //
     <string name="title_calendar">Dương Lịch</string>
@@ -74,4 +75,8 @@
     <string name="fb_login_protocol_scheme">24ac00c5770d489b92fb1a2670a81e73</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="hour_gold">Ngày hoàng đạo</string>
+    <string name="hour_black">Ngày hắc đạo</string>
+    <string name="hour_gold_dot">Giờ hoàng đạo :</string>
 </resources>

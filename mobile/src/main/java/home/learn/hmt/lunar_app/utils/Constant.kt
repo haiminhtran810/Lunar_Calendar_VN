@@ -12,7 +12,7 @@ const val FORMAT_TIME_24 = "HH:mm:ss"
 const val DD_MM_YYYY = "dd/MM/yyyy"
 const val YYYY = "yyyy"
 const val URL_12_STAR = "http://vansu.net/tu-vi.html"
-const val URL_SHARE_FACEBOOK = "https://www.facebook.com/nhoctax"
+const val URL_SHARE_FACEBOOK = "http://play.google.com/store/apps/details?id="
 
 val SUNLONG_MAJOR = arrayOf(
     19 * PI / 12,
@@ -94,8 +94,7 @@ val MONTH = arrayOf(
 
 
 val IMAGE_FOX = arrayOf(
-    R.drawable.bg_fox_1, R.drawable.bg_fox_2,
-    R.drawable.bg_fox_3, R.drawable.bg_fox_4,
+    R.drawable.bg_fox_1, R.drawable.ic_fox_3,
     R.drawable.bg_fox_5, R.drawable.bg_fox_6,
     R.drawable.bg_fox_7, R.drawable.bg_fox_8,
     R.drawable.bg_fox_9, R.drawable.bg_fox_10

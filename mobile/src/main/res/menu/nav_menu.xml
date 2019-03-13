@@ -41,7 +41,7 @@
     <item
             android:orderInCategory="6"
             android:id="@+id/menu_about"
-            android:icon="@drawable/ic_info__about"
+            android:icon="@drawable/ic_info"
             android:title="@string/nav_about"
             app:showAsAction="never"
     />

@@ -84,6 +84,8 @@
 	<dimen name="sp_40">160.00sp</dimen>
 	<dimen name="sp_46">184.00sp</dimen>
 	<dimen name="sp_48">192.00sp</dimen>
+	<dimen name="sp_50">200.00sp</dimen>
+	<dimen name="sp_54">216.00sp</dimen>
 	<dimen name="sp_6">24.00sp</dimen>
 	<dimen name="sp_8">32.00sp</dimen>
 	<dimen name="sp_80">320.00sp</dimen>

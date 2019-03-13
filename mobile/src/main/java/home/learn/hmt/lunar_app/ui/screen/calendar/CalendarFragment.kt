@@ -69,7 +69,8 @@ class CalendarFragment : BaseFragment() {
             img_navigation.setImageResource(R.drawable.ic_arrow_back_black_24dp)
             lg_header_month.apply {
                 tv_header_month.text = getString(R.string.nav_calendar)
-                img_arrow.visibility = View.GONE
+                img_arrow.gone()
+                setBackgroundResource(0)
             }
             img_navigation.setOnClickListener {
                 onBackPressed()

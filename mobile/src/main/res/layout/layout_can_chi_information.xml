@@ -139,9 +139,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
-
-    <View style="@style/HorizontalLine"/>
     <LinearLayout
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:textColor="@color/black_overlay"
+                android:text="@string/hour_gold_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textSize="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_5"
+                android:textStyle="bold"
+                android:id="@+id/hour_gold_calendar"
+                android:textColor="@color/black_overlay"
+                android:text="@string/hour_gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+            android:visibility="gone"
+            style="@style/HorizontalLine"/>
+    <LinearLayout
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -160,6 +184,7 @@
                 android:layout_weight="1"/>
     </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="gone"
             android:layout_marginTop="@dimen/dp_10"
             android:background="@color/transparent"
             android:layout_width="match_parent"

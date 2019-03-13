@@ -37,7 +37,7 @@
     <string name="year">Năm</string>
     <string name="hour_chi_can">Giờ %1$d</string>
 
-    //Navigation
+    <!-- Navigation -->
     <string name="nav_12_cung">12 cung hoàng đạo</string>
     <string name="nav_setting">Cài Đặt</string>
     <string name="nav_flower_hand">Xem hoa tay</string>
@@ -46,6 +46,7 @@
     <string name="nav_calendar">Lịch</string>
     <string name="colection">Sưu tầm</string>
     <string name="nav_about">Thông tin</string>
+    <string name="introduce">Giới thiệu</string>
 
     //
     <string name="title_calendar">Dương Lịch</string>
@@ -69,7 +70,6 @@
     <string name="t6">Sáu</string>
     <string name="t7">Bảy</string>
     <string name="cn">CN</string>
-    <string name="email">haiminhtran810@gmail.com</string>
 
     <string name="facebook_app_id">691167354619085</string>
     <string name="fb_login_protocol_scheme">24ac00c5770d489b92fb1a2670a81e73</string>
@@ -79,4 +79,20 @@
     <string name="hour_gold">Ngày hoàng đạo</string>
     <string name="hour_black">Ngày hắc đạo</string>
     <string name="hour_gold_dot">Giờ hoàng đạo :</string>
+    <string name="version">version</string>
+    <string name="beta">Beta</string>
+
+    <!-- About -->
+
+    <string name="email">haiminhtran810@gmail.com</string>
+    <string name="thanks">Mọi thông tin các bạn có thể liên hệ \nhaiminhtran810@gmail.com</string>
+
+    <string name="title_develop">2. Ứng dụng được phát triển bới cá nhân</string>
+    <string name="title_function">1. Chức năng hiện có của ứng dụng</string>
+    <string name="title_version">3. Phiên bản</string>
+
+    <string name="content_function">Các bạn có thể xem các thông tin như là Giờ hoàng đạo, ngày hoàng đạo, thông tin giờ
+        hiện tại của hệ thống, xem ngày tháng trong tương lai,không chạy ngầm trong ứng dụng. \n\nNguyên nhân đây chỉ là
+        bản Beta lên mình sẽ cung cấp cho bạn những dịch vụ hữu ích hơn trong tương lai
+    </string>
 </resources>

@@ -8,26 +8,12 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-            android:orientation="vertical"
+    <FrameLayout
+            android:id="@+id/container_child"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <FrameLayout
-                android:layout_weight="1"
-                android:id="@+id/container_child"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                tools:context=".ui.screen.main.MainFragment"/>
-        <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                ads:adSize="BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id">
-        </com.google.android.gms.ads.AdView>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            tools:context=".ui.screen.main.MainFragment"/>
+
     <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:background="@color/white"
@@ -37,6 +23,25 @@
             android:layout_gravity="start"
             app:itemTextColor="@android:color/black"
             app:menu="@menu/nav_menu"
-            app:headerLayout="@layout/layout_nav_head"
-    />
+            app:headerLayout="@layout/layout_nav_head">
+        <LinearLayout android:id="@+id/btn_logout"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="bottom"
+                      android:background="?attr/selectableItemBackground"
+                      android:clickable="true"
+                      android:focusable="true"
+                      android:gravity="center_vertical"
+                      android:orientation="horizontal">
+            <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/banner_ad_unit_id">
+            </com.google.android.gms.ads.AdView>
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

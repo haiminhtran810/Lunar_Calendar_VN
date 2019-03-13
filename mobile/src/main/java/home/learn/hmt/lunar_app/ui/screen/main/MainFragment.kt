@@ -6,15 +6,18 @@ import android.view.*
 import androidx.core.view.GravityCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.material.navigation.NavigationView
+import home.learn.hmt.lunar_app.BuildConfig
 
 import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.ui.base.BaseFragment
+import home.learn.hmt.lunar_app.ui.screen.about.AboutFragment
 import home.learn.hmt.lunar_app.ui.screen.calendar.CalendarFragment
 import home.learn.hmt.lunar_app.ui.screen.information.InformationFragment
 import home.learn.hmt.lunar_app.ui.screen.webview.WebviewFragment
 import home.learn.hmt.lunar_app.utils.URL_12_STAR
 import home.learn.hmt.lunar_app.utils.URL_SHARE_FACEBOOK
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.layout_nav_head.view.*
 
 class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,7 +41,12 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setHasOptionsMenu(true)
-        nav_view.itemIconTintList = null
+        nav_view.apply {
+            itemIconTintList = null
+            val hView = getHeaderView(0)
+            hView.tv_version.text = getString(R.string.beta) + " " + BuildConfig.VERSION_NAME
+        }
+
     }
 
     override fun initView() {
@@ -52,6 +60,7 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
             InformationFragment.TAG,
             true
         )
+
     }
 
     private fun loadAds() {
@@ -84,15 +93,25 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
             R.id.menu_share -> {
                 shareFacebook()
             }
+            R.id.menu_about -> {
+                addChildFragment(
+                    this,
+                    R.id.container_child,
+                    AboutFragment.newInstance(),
+                    AboutFragment.TAG,
+                    true
+                )
+            }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 
     private fun shareFacebook() {
+        val urlShare = URL_SHARE_FACEBOOK + context?.packageName
         context?.let {
             Intent(Intent.ACTION_SEND)?.apply {
-                putExtra(Intent.EXTRA_TEXT, URL_SHARE_FACEBOOK)
+                putExtra(Intent.EXTRA_TEXT, urlShare)
                 type = "text/plain"
                 startActivity(Intent.createChooser(this, "share"))
             }

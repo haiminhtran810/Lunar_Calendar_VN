@@ -5,14 +5,10 @@ import home.learn.hmt.lunar_app.R
 const val DAYS_COUNT = 42
 const val LOCAL_TIMEZONE = 7.0
 const val PI = Math.PI
-const val NUMBER_OF_WEEKS_IN_MONTH = 6
-const val NUMBER_OF_DAYS_IN_WEEK = 7
 const val DATE_FORMAT = "MMM yyyy"
 const val FORMAT_TIME_24 = "HH:mm:ss"
 const val DD_MM_YYYY = "dd/MM/yyyy"
 const val YYYY = "yyyy"
-const val URL_12_STAR = "http://vansu.net/tu-vi.html"
-const val URL_SHARE_FACEBOOK = "http://play.google.com/store/apps/details?id="
 
 val SUNLONG_MAJOR = arrayOf(
     19 * PI / 12,

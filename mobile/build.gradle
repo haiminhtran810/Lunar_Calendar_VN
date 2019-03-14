@@ -7,21 +7,18 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 apply from: 'autodimension.gradle'
+
 apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
-
     flavorDimensions "default"
-
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
     }
-
     dataBinding {
         enabled = true
     }
-
     androidExtensions {
         experimental = true
     }
@@ -40,25 +37,52 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+        develop {
+            versionNameSuffix = "dev"
+            applicationIdSuffix = ".dev"
+            manifestPlaceholders = [applicationName: "lunar-DEV"]
+        }
+        production {
+            applicationId = "hyd.prd.lunar"
+            manifestPlaceholders = [applicationName: "@string/app_name"]
+        }
+        staging {
+            versionNameSuffix = "stg"
+            applicationIdSuffix = ".stg"
+            manifestPlaceholders = [applicationName: "lunar-STG"]
+        }
+    }
+
+    applicationVariants.all { variant ->
+        def URL_12_STAR = "http://vansu.net/tu-vi.html"
+        def URL_SHARE_APP = "http://play.google.com/store/apps/details?id="
+
+        variant.buildConfigField "String", "URL_12_STAR", "\"${URL_12_STAR}\""
+        variant.buildConfigField "String", "URL_SHARE_APP", "\"${URL_SHARE_APP}\""
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:1.0.0"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation "androidx.recyclerview:recyclerview:1.0.0"
-    implementation "androidx.cardview:cardview:1.0.0"
-    implementation "com.google.android.material:material:1.0.0-rc01"
-    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-alpha1'
     implementation 'com.google.firebase:firebase-ads:15.0.1'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation "androidx.test:runner:1.1.0"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.1.0"
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     // Facebook
     implementation 'com.facebook.android:facebook-share:[4,5)'
-
     // eventbus
-    implementation "org.greenrobot:eventbus:3.0.0"
+    implementation 'org.greenrobot:eventbus:3.0.0'
 }

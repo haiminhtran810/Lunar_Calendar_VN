@@ -5,7 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="folk_1">Chỉ biết véo người, hễ người véo trả rụng rời tay chân.</string>
-    <string name="hour">Giờ</string>
+    <string name="hour">Giờ %1$s</string>
     <string name="detail">Chi tiết</string>
 
     <string name="sunday">CN</string>
@@ -15,6 +15,11 @@
     <string name="thurs">Năm</string>
     <string name="six">Sáu</string>
     <string name="sat">Bảy</string>
+
+    <!--Can Chi-->
+    <string name="day_can_chi">Ngày %1$s %2$s</string>
+    <string name="month_can_chi">Tháng %1$s %2$s</string>
+    <string name="year_can_chi">Năm %1$s %2$s</string>
 
     <string-array name="month">
         <item>Tháng 1</item>

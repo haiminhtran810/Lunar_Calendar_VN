@@ -37,6 +37,9 @@ class InformationFragment : BaseFragment() {
     override fun initView() {
         super.initView()
         val calendar = Calendar.getInstance()
+        layout_header.apply {
+            //img_arrow.visible()
+        }
         dmyCurrent = DayMonthYear(
             calendar.get(Calendar.DAY_OF_MONTH),
             calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR), 0, 0
@@ -61,13 +64,21 @@ class InformationFragment : BaseFragment() {
     fun printInfo(dmy: DayMonthYear) {
         val can = can(dmy)
         val chi = chi(dmy)
-        tv_can_chi_date.text = resources.getString(R.string.date) + " " + CAN[can[0]] + " " + CHI[chi[0]]
+        tv_can_chi_date.text = resources.getString(
+            R.string.day_can_chi,
+            CAN[can[0]],
+            CHI[chi[0]]
+        )
         tv_can_chi_month.text = resources.getString(
-            R.string.month
-        ) + " " + CAN[can[1]] + " " + CHI[chi[1]]
+            R.string.month_can_chi,
+            CAN[can[2]],
+            CHI[chi[2]]
+        )
         tv_can_chi_year.text = resources.getString(
-            R.string.year
-        ) + " " + CAN[can[2]] + " " + CHI[chi[2]]
+            R.string.year_can_chi,
+            CAN[can[2]],
+            CHI[chi[2]]
+        )
         val lunaDay = solar2Lunar(dmy)
         tv_date_lunar.text = lunaDay.day.toString()
         val hour = gioHoangDao(dmy)
@@ -101,7 +112,7 @@ class InformationFragment : BaseFragment() {
                     text = timeString
                 }
                 tv_hour_can_chi?.apply {
-                    text = resources.getString(R.string.hour) + " " + hour
+                    text = resources.getString(R.string.hour, hour)
                 }
                 handler?.postDelayed(this, 1000)
             }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import home.learn.hmt.lunar_app.BuildConfig
 import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.ui.base.BaseFragment
-import home.learn.hmt.lunar_app.utils.gone
 import kotlinx.android.synthetic.main.layout_header.*
 import kotlinx.android.synthetic.main.layout_information_app.*
 
@@ -27,7 +26,6 @@ class AboutFragment : BaseFragment() {
             img_navigation.setImageResource(R.drawable.ic_arrow_back_black_24dp)
             lg_header_month.apply {
                 tv_header_month.text = getString(R.string.introduce)
-                img_arrow.gone()
                 setBackgroundResource(0)
             }
             img_navigation.setOnClickListener {

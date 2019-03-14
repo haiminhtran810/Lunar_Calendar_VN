@@ -14,8 +14,6 @@ import home.learn.hmt.lunar_app.ui.screen.about.AboutFragment
 import home.learn.hmt.lunar_app.ui.screen.calendar.CalendarFragment
 import home.learn.hmt.lunar_app.ui.screen.information.InformationFragment
 import home.learn.hmt.lunar_app.ui.screen.webview.WebviewFragment
-import home.learn.hmt.lunar_app.utils.URL_12_STAR
-import home.learn.hmt.lunar_app.utils.URL_SHARE_FACEBOOK
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.layout_nav_head.view.*
 
@@ -85,7 +83,7 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
                 addChildFragment(
                     this,
                     R.id.container_child,
-                    WebviewFragment.newInstance(URL_12_STAR),
+                    WebviewFragment.newInstance(BuildConfig.URL_12_STAR),
                     WebviewFragment.TAG,
                     true
                 )
@@ -108,7 +106,7 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun shareFacebook() {
-        val urlShare = URL_SHARE_FACEBOOK + context?.packageName
+        val urlShare = BuildConfig.URL_SHARE_APP + context?.packageName
         context?.let {
             Intent(Intent.ACTION_SEND)?.apply {
                 putExtra(Intent.EXTRA_TEXT, urlShare)

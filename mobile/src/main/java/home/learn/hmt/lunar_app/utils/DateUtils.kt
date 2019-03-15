@@ -3,6 +3,7 @@ package home.learn.hmt.lunar_app.utils
 import android.content.Context
 import android.graphics.Point
 import android.view.WindowManager
+import home.learn.hmt.lunar_app.R
 import home.learn.hmt.lunar_app.model.CalendarDate
 import home.learn.hmt.lunar_app.model.DayMonthYear
 import java.text.SimpleDateFormat
@@ -62,6 +63,33 @@ fun Date.convertDataToCalendar(): Calendar {
     cal.time = this
     return cal
 }
+
+fun slideImagesStar() = arrayListOf<Int>(
+    R.drawable.ic_bach_duong, R.drawable.ic_kim_nguu,
+    R.drawable.ic_songtu, R.drawable.ic_cu_giai,
+    R.drawable.ic_su_tu, R.drawable.ic_xu_nu,
+    R.drawable.ic_thien_binh, R.drawable.ic_ho_cap,
+    R.drawable.ic_nhan_ma, R.drawable.ic_ma_ket,
+    R.drawable.ic_bao_binh, R.drawable.ic_song_ngu
+)
+
+fun slideDateStar() = arrayListOf<String>(
+    "Bạch Dương\n(21/3 - 19/4)", "Kim Ngưu\n(20/4 - 20/5)",
+    "Song Tử\n(21/5 - 21/6)", "Cự Giải\n(22/6 - 22/7)",
+    "Sư Tử\n(23/7 - 22/8)", "Xử Nữ\n(23/8 - 22/9)",
+    "Thiên Bình\n(23/9 - 23/10)", "Hổ Cáp\n(24/10 - 21/11)",
+    "Nhân Mã\n(22/11 - 21/12)", "Ma Kết\n(22/12 - 19/1)",
+    "Bảo Bình\n(20/1 - 18/2)", "Song Ngư\n(19/2 - 20/3)"
+)
+
+fun slideContentStar() = arrayListOf<String>(
+    "Bạch Dương\n(21/3 - 19/4)", "Kim Ngưu\n(20/4 - 20/5)",
+    "Song Tử\n(21/5 - 21/6)", "Cự Giải\n(22/6 - 22/7)",
+    "Sư Tử\n(23/7 - 22/8)", "Xử Nữ\n(23/8 - 22/9)",
+    "Thiên Bình\n(23/9 - 23/10)", "Hổ Cáp\n(24/10 - 21/11)",
+    "Nhân Mã\n(22/11 - 21/12)", "Ma Kết\n(22/12 - 19/1)",
+    "Bảo Bình\n(20/1 - 18/2)", "Song Ngư\n(19/2 - 20/3)"
+)
 
 
 

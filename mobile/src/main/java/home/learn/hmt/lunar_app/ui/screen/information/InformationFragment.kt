@@ -71,8 +71,8 @@ class InformationFragment : BaseFragment() {
         )
         tv_can_chi_month.text = resources.getString(
             R.string.month_can_chi,
-            CAN[can[2]],
-            CHI[chi[2]]
+            CAN[can[1]],
+            CHI[chi[1]]
         )
         tv_can_chi_year.text = resources.getString(
             R.string.year_can_chi,

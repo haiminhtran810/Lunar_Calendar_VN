@@ -30,7 +30,7 @@
                     android:id="@+id/tv_date_information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/red"
                     android:textSize="@dimen/sp_80"
                     android:textStyle="bold"
                     tools:text="27"/>

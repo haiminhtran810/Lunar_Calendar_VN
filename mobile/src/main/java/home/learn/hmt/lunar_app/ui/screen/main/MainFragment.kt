@@ -13,7 +13,7 @@ import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import home.learn.hmt.lunar_app.ui.screen.about.AboutFragment
 import home.learn.hmt.lunar_app.ui.screen.calendar.CalendarFragment
 import home.learn.hmt.lunar_app.ui.screen.information.InformationFragment
-import home.learn.hmt.lunar_app.ui.screen.webview.WebviewFragment
+import home.learn.hmt.lunar_app.ui.screen.webview.StarFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.layout_nav_head.view.*
 
@@ -83,8 +83,8 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
                 addChildFragment(
                     this,
                     R.id.container_child,
-                    WebviewFragment.newInstance(BuildConfig.URL_12_STAR),
-                    WebviewFragment.TAG,
+                    StarFragment.newInstance(BuildConfig.URL_12_STAR),
+                    StarFragment.TAG,
                     true
                 )
             }

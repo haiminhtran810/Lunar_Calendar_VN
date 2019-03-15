@@ -9,15 +9,25 @@ import home.learn.hmt.lunar_app.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.layout_header.view.*
 import kotlinx.android.synthetic.main.layout_web_view.*
 
-class WebviewFragment : BaseFragment() {
+
+//Github: https://github.com/tommybuonomo/dotsindicator
+class StarFragment : BaseFragment() {
 
     private var urlWeb: String? = ""
+    private var adapter: SliderAdapter? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.layout_web_view, container, false)
     }
 
     override fun initView() {
         super.initView()
+        context?.apply {
+            adapter = SliderAdapter(this)
+            slideViewPager.adapter = adapter
+            dots_indicator.setViewPager(slideViewPager)
+        }
+
+
         urlWeb = arguments?.getString(TAG_URL)
         layout_header.apply {
             img_navigation.setImageResource(R.drawable.ic_arrow_back_black_24dp)
@@ -25,7 +35,7 @@ class WebviewFragment : BaseFragment() {
             tv_header_month.text = getString(R.string.nav_12_cung)
         }
 
-        wv_url.apply {
+        /*wv_url.apply {
             settings.apply {
                 javaScriptEnabled = true
                 builtInZoomControls = true
@@ -35,7 +45,7 @@ class WebviewFragment : BaseFragment() {
                 databaseEnabled = true
             }
             loadUrl(urlWeb)
-        }
+        }*/
     }
 
     override fun handlers() {
@@ -54,9 +64,9 @@ class WebviewFragment : BaseFragment() {
     }
 
     companion object {
-        const val TAG = "WebviewFragment"
+        const val TAG = "StarFragment"
         const val TAG_URL = "WebviewFragmentURL"
-        fun newInstance(url: String) = WebviewFragment().apply {
+        fun newInstance(url: String) = StarFragment().apply {
             arguments = Bundle().apply {
                 putString(TAG_URL, url)
             }

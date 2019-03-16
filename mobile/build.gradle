@@ -85,4 +85,7 @@ dependencies {
     implementation 'com.facebook.android:facebook-share:[4,5)'
     // eventbus
     implementation 'org.greenrobot:eventbus:3.0.0'
+
+    //dots
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:3.0.3'
 }

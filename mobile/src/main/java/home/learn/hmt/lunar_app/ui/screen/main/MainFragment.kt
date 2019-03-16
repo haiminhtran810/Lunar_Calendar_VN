@@ -83,7 +83,7 @@ class MainFragment : BaseFragment(), NavigationView.OnNavigationItemSelectedList
                 addChildFragment(
                     this,
                     R.id.container_child,
-                    StarFragment.newInstance(BuildConfig.URL_12_STAR),
+                    StarFragment.newInstance(),
                     StarFragment.TAG,
                     true
                 )

@@ -4,9 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
 import home.learn.hmt.lunar_app.R
+import home.learn.hmt.lunar_app.utils.slideContentStar
 import home.learn.hmt.lunar_app.utils.slideDateStar
 import home.learn.hmt.lunar_app.utils.slideImagesStar
 import kotlinx.android.synthetic.main.item_star.view.*
@@ -19,7 +21,7 @@ class SliderAdapter(context: Context) : PagerAdapter() {
 
     lateinit var layoutInflater: LayoutInflater
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
-        return view == `object` as ConstraintLayout
+        return view == `object` as ScrollView
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
@@ -28,13 +30,14 @@ class SliderAdapter(context: Context) : PagerAdapter() {
         view?.apply {
             tv_date_star.text = slideDateStar()[position]
             img_slide.setImageResource(slideImagesStar()[position])
+            tv_content_star.text = slideContentStar()[position]
         }
         container.addView(view)
         return view
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        container.removeView(`object` as ConstraintLayout)
+        container.removeView(`object` as ScrollView)
     }
 
     override fun getCount(): Int = slideDateStar().size

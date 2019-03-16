@@ -7,30 +7,13 @@
         android:clickable="false"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <include
-            android:id="@+id/layout_header"
-            layout="@layout/layout_header"/>
-
     <androidx.viewpager.widget.ViewPager
             android:id="@+id/slideViewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/black_overlay"/>
 
-    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/dots_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:dampingRatio="0.5"
-            app:dotsColor="@color/white"
-            app:dotsStrokeColor="@color/brightYellow"
-            app:dotsCornerRadius="2dp"
-            app:dotsSize="16dp"
-            app:dotsSpacing="6dp"
-            app:dotsStrokeWidth="2dp"
-            app:stiffness="300"
-    />
-
+    <include
+            android:id="@+id/layout_header"
+            layout="@layout/layout_header"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

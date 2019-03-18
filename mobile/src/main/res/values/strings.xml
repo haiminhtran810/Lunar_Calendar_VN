@@ -90,9 +90,9 @@
     <!-- About -->
 
     <string name="email">haiminhtran810@gmail.com</string>
-    <string name="thanks">Mọi thông tin các bạn có thể liên hệ \nhaiminhtran810@gmail.com</string>
+    <string name="thanks">Mọi thông tin các bạn có thể liên hệ \nhai.mobileprogramer@gmail.com</string>
 
-    <string name="title_develop">2. Ứng dụng được phát triển bới cá nhân</string>
+    <string name="title_develop">2. Ứng dụng được phát triển bởi cá nhân</string>
     <string name="title_function">1. Chức năng hiện có của ứng dụng</string>
     <string name="title_version">3. Phiên bản</string>
 

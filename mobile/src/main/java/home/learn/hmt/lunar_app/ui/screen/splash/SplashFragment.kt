@@ -39,7 +39,7 @@ class SplashFragment : BaseFragment() {
 
     companion object {
         const val TAG = "SplashFragment"
-        const val DELAY_MILLISECONDS = 500L
+        const val DELAY_MILLISECONDS = 100L
         @JvmStatic
         fun newInstance() = SplashFragment()
     }
